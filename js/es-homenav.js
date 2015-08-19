@@ -311,7 +311,7 @@ $(function() {
 
 	$.each(group, function(n, value) {
 		if (value.g != 'navmr') {
-		$("#navmain").append('<li><a>' + value.n + '</a><ul id="' + value.g + '"></ul></li>');
+		$("#navmain").append('<li><a href="#">' + value.n + '</a><ul id="' + value.g + '"></ul></li>');
 		}
 	});
 
@@ -319,14 +319,14 @@ $(function() {
     
 	$.each(obj, function(n, value) {
 		if (value.g != 'navmr') {
-			$("#" + value.g).append('<li esOpenVaule="' + value.u + '"><a>' + value.n + '</a></li>');
+			$("#" + value.g).append('<li esOpenVaule="' + value.u + '"><a href="#">' + value.n + '</a></li>');
 		} else {
 			if(normalNode == undefined)
 			{
 				normalNode = $("#navlogo").next()
 			}
 			
-			normalNode.before('<li ' + ((value.self)?'esVaule="':'esOpenVaule="') + value.u + '"><a>' + value.n + '</a></li>');
+			normalNode.before('<li ' + ((value.self)?'esVaule="':'esOpenVaule="') + value.u + '"><a href="#">' + value.n + '</a></li>');
 		}
 	});
 });
