@@ -1,16 +1,15 @@
-  
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title>ES HOME</title>
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<link rel="stylesheet" href="css/home.css" media="all">
+		<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/home.css" media="all" />
 		<script src="js/es-homenav.js"></script>
 		<script src="js/es-home.js"></script>
 		<script src="js/es-custom-home.js"></script>
-		<script type="text/javascript" src="http://www.99lime.com/site/templates/js/kickstart.js"></script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
 		<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 		<script>
 			function AddFavorite(sURL, sTitle) {
@@ -30,12 +29,12 @@
 	<body style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
 		<div id="main">
 			<ul id="navmain" class="menu">
-				<li><a href="#"><span>ES</span> HOME</a></li>
+				<li id = "navlogo"><a href="#"><span>ES</span> HOME</a></li>
 				<li class="right"><a href="#" onclick="AddFavorite(window.location,document.title)">收藏本站</a></li>
 				<li class="right"><a rel="leanModal" name="about" href="#about">关于</a></li>
 			</ul>
 			<div id="container" style="padding-left: 0;">
-				<iframe id="viewer" name="viewer" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" style="background-color:#fff" src=""></iframe>
+				<iframe id="viewer" name="viewer" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" style="background-color:#fff" src></iframe>
 			</div>
 		</div>
 
@@ -50,21 +49,18 @@
 					</tr>
 					<tr>
 						<th>Version</th>
-						<td>alpha_2</td>
-						<td>20150808</td>
+						<td>alpha_3</td>
+						<td>20150819</td>
 					</tr>
 					<tr>
 						<th>Powered by</th>
-						<td><a href="http://www.xiaobaidonghui.cn" target="_blank" rel="external">Little Bai</a></td>
-						<td><a href="http://www.littleji.com" target="_blank" rel="external">Little Ji</a></td>
+						<td><a href="http://www.xiaobaidonghui.cn">Little Bai</a></td>
+						<td><a href="http://www.littleji.com">Little Ji</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<div id="lean_overlay">
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256051192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256051192%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
-		</div>
+		<div id="lean_overlay"></div>
 	</body>
 
 </html>
-  

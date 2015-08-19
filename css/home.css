@@ -15,6 +15,21 @@ div#main{
 }
 
 
+/*--------------导航METRO Layout-------------------*/
+span.dhicon{
+	width: 100px;
+	height: 100px;
+}
+span.dhicon.c1{ background-color: #4D99E0;}
+span.dhicon.c2{ background-color: #75CC00;}
+span.dhicon.c3{ background-color: #E49800;}
+img.dhicon.c4{ background-color: #E4247E;}
+img.dhicon.c5{ background-color: #00C6E4;}
+img.dhicon.c6{ background-color: #C50000;}
+img.dhicon.c7{ background-color: #E4DB0F;}
+img.dhicon.c8{ background-color: #7400E4;}
+
+
 
 /*--------------HOME Menu Layout-------------------*/
 div#left_menu{	

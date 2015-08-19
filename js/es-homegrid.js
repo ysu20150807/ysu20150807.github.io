@@ -1,4 +1,3 @@
-$(function() {
 	var group = [{
 		"n": "默认",
 		"g": "navmr",
@@ -34,6 +33,7 @@ $(function() {
 		"n": "图书馆",
 		"u": "http://library.ysu.edu.cn",
 		"g": "navyd",
+		"tile": true,
 		"id": 2
 	}, {
 		"n": "燕大新闻",
@@ -59,6 +59,7 @@ $(function() {
 		"n": "校园直播",
 		"u": "http://yit.ysu.edu.cn/dmtfw/dszb/CCTV1.htm",
 		"g": "navyd",
+		"tile": true,
 		"id": 7
 	}, {
 		"n": "百度",
@@ -81,6 +82,7 @@ $(function() {
 		"n": "新浪微博",
 		"u": "http://weibo.com",
 		"g": "navmr",
+		"tile": true,
 		"id": 2
 	}, {
 		"n": "百度贴吧",
@@ -101,6 +103,7 @@ $(function() {
 		"n": "农业银行",
 		"u": "http://www.abchina.com/",
 		"g": "navsh",
+		"tile": true,
 		"id": 3
 	}, {
 		"n": "中国移动",
@@ -176,6 +179,7 @@ $(function() {
 		"n": "Coursera",
 		"u": "https://www.coursera.org/",
 		"g": "navgkk",
+		"tile": true,
 		"id": 3
 	}, {
 		"n": "MIT Open CW",
@@ -216,11 +220,13 @@ $(function() {
 		"n": "淘宝特卖",
 		"u": "http://temai.taobao.com/event9776.htm?pid=mm_34619426_10544719_34746681",
 		"g": "navgw",
+		"tile": true,
 		"id": 1
 	}, {
 		"n": "天猫精选",
 		"u": "http://s.click.taobao.com/JVTYq1y?pid=mm_34619426_10544719_34746681",
 		"g": "navgw",
+		"tile": true,
 		"id": 2
 	}, {
 		"n": "9块9包邮",
@@ -309,24 +315,51 @@ $(function() {
 		"id": 7
 	}];
 
-	$.each(group, function(n, value) {
-		if (value.g != 'navmr') {
-		$("#navmain").append('<li><a>' + value.n + '</a><ul id="' + value.g + '"></ul></li>');
-		}
-	});
+function gengrid() {
+	$("#webgrid").empty();
 
-    var normalNode;
-    
+	var rcols = parseInt($("#webgrid").width() / 150);
+	$.each(group, function(n, value) {		
+		$("#webgrid").append('<div id="' + value.g + '0" class="row cells' + rcols + '"><span class="cell" align="center">'+ value.n +'</span></div>');		
+	});
+	
 	$.each(obj, function(n, value) {
-		if (value.g != 'navmr') {
-			$("#" + value.g).append('<li esOpenVaule="' + value.u + '"><a>' + value.n + '</a></li>');
-		} else {
-			if(normalNode == undefined)
-			{
-				normalNode = $("#navlogo").next()
-			}
-			
-			normalNode.before('<li ' + ((value.self)?'esVaule="':'esOpenVaule="') + value.u + '"><a>' + value.n + '</a></li>');
+		if(value.id == 0)
+		{
+			return;
+		}
+		
+		var rowid = parseInt(value.id / rcols);
+		
+		if(value.id % rcols == 0)
+		{
+			$("#" + value.g + (rowid - 1)).after('<div id="' + value.g + rowid + '" class="row cells' + rcols + '"><span class="cell" align="center"></span></div>');	
+		}
+		
+		
+		$("#" + value.g + rowid).append('<div class="cell"><a href="' + value.u + '" target="_blank">' + value.n + '</a><div>');
+	});
+	
+};
+
+
+function genTile()
+{
+	$.each(obj, function(n, value) {
+		if(value.tile != undefined)
+		{
+			$("#tile").append(getTile(value.u, 'img//' + value.g + value.id + '.png', value.n));
+		
 		}
 	});
-});
+//	
+//	$(".tile").onClick(function(){window.open(vaule.u)});		
+}
+
+function getTile(url, img, text)
+{
+	return '<div rel="tile" class="tile fg-white" onclick="openTile(\'' + url +'\')"><div class="tile-content slide-up"><div class="slide"><div class="image-container image-format-square" style="width: 100%;"><div class="frame" style="background-position: center; background-image: url(' + img + '); background-size: auto; background-repeat: no-repeat;"></div></div></div><div class="slide-over op-cyan text-small padding10">' + text + '</div></div></div>'
+}
+
+$(window).resize(function(){gengrid();});
+$(document).ready(function(){gengrid();genTile();});

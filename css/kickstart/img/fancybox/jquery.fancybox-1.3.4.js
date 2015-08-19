@@ -24,7 +24,7 @@
 
 		loadingTimer, loadingFrame = 1,
 
-		titleHeight = 0, titleStr = '', start_pos, final_pos, busy = false, fx = $.extend($('<div>')[0], { prop: 0 }),
+		titleHeight = 0, titleStr = '', start_pos, final_pos, busy = false, fx = $.extend($('<div/>')[0], { prop: 0 }),
 
 		isIE6 = $.browser.msie && $.browser.version < 7 && !window.XMLHttpRequest,
 
@@ -56,7 +56,7 @@
 			selectedOpts.width = 'auto';
 			selectedOpts.height = 'auto';
 
-			tmp.html( '<p id="fancybox-error">The requested content cannot be loaded.<br>Please try again later.</p>' );
+			tmp.html( '<p id="fancybox-error">The requested content cannot be loaded.<br />Please try again later.</p>' );
 
 			_process_inline();
 		},
@@ -179,7 +179,7 @@
 						return;
 					}
 
-					$('<div class="fancybox-inline-tmp">')
+					$('<div class="fancybox-inline-tmp" />')
 						.hide()
 						.insertBefore( $(obj) )
 						.bind('fancybox-cleanup', function() {
@@ -218,15 +218,15 @@
 				case 'swf':
 					selectedOpts.scrolling = 'no';
 
-					str = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + selectedOpts.width + '" height="' + selectedOpts.height + '"><param name="movie" value="' + href + '">';
+					str = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="' + selectedOpts.width + '" height="' + selectedOpts.height + '"><param name="movie" value="' + href + '"></param>';
 					emb = '';
 
 					$.each(selectedOpts.swf, function(name, val) {
-						str += '<param name="' + name + '" value="' + val + '">';
+						str += '<param name="' + name + '" value="' + val + '"></param>';
 						emb += ' ' + name + '="' + val + '"';
 					});
 
-					str += '<embed src="' + href + '" type="application/x-shockwave-flash" width="' + selectedOpts.width + '" height="' + selectedOpts.height + '" '="" +="" emb=""></object>';
+					str += '<embed src="' + href + '" type="application/x-shockwave-flash" width="' + selectedOpts.width + '" height="' + selectedOpts.height + '"' + emb + '></embed></object>';
 
 					tmp.html(str);
 
@@ -307,7 +307,7 @@
 			selectedOpts.width = imgPreloader.width;
 			selectedOpts.height = imgPreloader.height;
 
-			$("<img>").attr({
+			$("<img />").attr({
 				'id' : 'fancybox-img',
 				'src' : imgPreloader.src,
 				'alt' : selectedOpts.title
@@ -612,7 +612,7 @@
 			}
 
 			if (currentOpts.type == 'iframe') {
-				$('<iframe id="fancybox-frame" name="fancybox-frame' + new Date().getTime() + '" frameborder="0" hspace="0" '="" +="" ($.browser.msie="" ?="" 'allowtransparency="true" "'="" :="" '')="" scrolling="' + selectedOpts.scrolling + '" src="' + currentOpts.href + '"></iframe>').appendTo(content);
+				$('<iframe id="fancybox-frame" name="fancybox-frame' + new Date().getTime() + '" frameborder="0" hspace="0" ' + ($.browser.msie ? 'allowtransparency="true""' : '') + ' scrolling="' + selectedOpts.scrolling + '" src="' + currentOpts.href + '"></iframe>').appendTo(content);
 			}
 
 			wrap.show();
@@ -1053,8 +1053,8 @@
 			close = $('<a id="fancybox-close"></a>'),
 			title = $('<div id="fancybox-title"></div>'),
 
-			nav_left = $('<a href="javascript:;" id="fancybox-left" target="_blank" rel="external"><span class="fancy-ico" id="fancybox-left-ico"></span></a>'),
-			nav_right = $('<a href="javascript:;" id="fancybox-right" target="_blank" rel="external"><span class="fancy-ico" id="fancybox-right-ico"></span></a>')
+			nav_left = $('<a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a>'),
+			nav_right = $('<a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a>')
 		);
 
 		close.click($.fancybox.close);
@@ -1153,4 +1153,4 @@
 		$.fancybox.init();
 	});
 
-})(jQuery);</div></div>
+})(jQuery);
