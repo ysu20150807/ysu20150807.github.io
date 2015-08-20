@@ -245,8 +245,8 @@ function gengrid() {
 			if (value.tile == undefined) {
 				if (value.hide == undefined) {
 					webid++;
-					var rowid = parseInt(webid / rcols);
-					if (webid % rcols == 0) {
+					var rowid = parseInt(webid / (rcols - 1));
+					if (webid % (rcols-1) == 0) {
 						$("#" + webgroup + (rowid - 1)).after('<div id="' + webgroup + rowid + '" class="row cells' + rcols + '"><span class="cell" align="center"></span></div>');
 					}
 
@@ -292,6 +292,9 @@ $(window).resize(function() {
 	gengrid();
 });
 $(document).ready(function() {
+	
+	showWeather();
+	
 	gengrid();
 
 	$("#trythis").click(function() {
@@ -346,5 +349,4 @@ $(document).ready(function() {
 		window.open(url , "_blank");
 	});
 
-	showWeather();
 });
