@@ -56,3 +56,14 @@ table{width:100%;margin:0 0 10px 0;text-align:left;border-collapse: collapse;}
 	tbody tr.last th,
 	tbody tr.last td{border-bottom:0;}
 
+
+/*-------------- HOME NAV Layout------------------- */
+@media screen and (max-width: 721px) { 
+	.navlicustomcss{
+  display: none;
+	visibility: hidden;
+}
+} 
+
+
+

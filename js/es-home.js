@@ -21,3 +21,15 @@ $(document).ready(function() {
 	
 	console.info("           ES           \n       做一个环保的人\n============================\nPowered by\nhttp://www.littleji.com\nhttp://www.xiaobaidonghui.cn\n\n In YanShan University 2015\n============================");
 });
+
+
+function SearchLibrary() {
+    var txtsjk = document.getElementById("wd").value;
+    var actionURL = "http://202.206.242.99/opac/openlink.php";
+//  var select1 = document.getElementById("select10");
+//  switch (select1.value) {
+        actionURL = actionURL + "?strSearchType=title&match_flag=forward&historyCount=1&strText=" + encodeURIComponent(txtsjk) + "&doctype=ALL&displaypg=20&showmode=list&sort=CATA_DATE&orderby=desc&location=ALL";
+//      break;
+//  }
+    window.open(actionURL, "_blank");
+}

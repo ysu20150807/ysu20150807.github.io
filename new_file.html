@@ -10,39 +10,43 @@
 		<script src="js/metro.min.js"></script>
 		<script src="js/es-homegrid.js"></script>
 		<script>
-			function baidu()
-			{
-				self.location = "https://www.baidu.com/s?wd=" + $("#searchtext").value;	
+			function baidu() {
+				self.location = "https://www.baidu.com/s?wd=" + $("#searchtext").value;
 			}
-			function google()
-			{
-				self.location = "https://duliziyou.com/search?q=" + $("#searchtext").value;	
+
+			function google() {
+				self.location = "https://duliziyou.com/search?q=" + $("#searchtext").value;
 			}
-			function openTile(tileurl)
-			{
-				top.location = tileurl;
+
+			function openTile(tileurl) {
+				window.open(tileurl, "_blank");
 			}
 		</script>
 	</head>
 
 	<body>
-		<div align="center" style="padding-top: 2%;">
-			<div class="input-control text" data-role="input" style="width: 30%;">
-				<input id="searchtext" type="text">
-				<button class="button helper-button clear"><span class="mif-cross"></span></button>
-				<div class="button-group">
-					<button class="button bg-blue bg-active-darkPink fg-white" onclick="baidu()">百度</button>
-					<button class="button bg-blue bg-active-darkPink fg-white" onclick="google()">谷歌</button>
+		<div align="center">
+			<div class="mainlcss" id="weather" style="float: right;">
+			</div>
+				
+			<div class="mainlcss">
+				<div class="searchcss input-control text" data-role="input">
+					<input id="searchtext" type="text">
+					<button class="button helper-button clear"><span class="mif-cross"></span></button>
+					<div class="button-group">
+						<button class="button bg-blue bg-active-darkPink fg-white" onclick="baidu()">百度</button>
+						<button class="button bg-blue bg-active-darkPink fg-white" onclick="google()">谷歌</button>
+					</div>
 				</div>
-			</div>
 
-			<div id="webgrid" class="example grid" style="width: 80%; margin-top: 1%;" align="left">
-					
+				<div id="webgrid" class="example grid" align="left">
+
+				</div>
+
+				<div id="tile">
+				</div>
+
 			</div>
-		
-			<div id="tile" class="tilecss">
-			</div>
-			
 		</div>
 
 	</body>
