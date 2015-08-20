@@ -11,16 +11,25 @@
 		<script src="js/es-homegrid.js"></script>
 		<script>
 			function baidu() {
-				self.location = "https://www.baidu.com/s?wd=" + $("#searchtext").value;
+				self.location = "https://www.baidu.com/s?wd=" + encodeURIComponent($('#searchtext').val());
 			}
 
 			function google() {
-				self.location = "https://duliziyou.com/search?q=" + $("#searchtext").value;
+				self.location = "https://duliziyou.com/search?q=" + encodeURIComponent($('#searchtext').val());
 			}
 
 			function openTile(tileurl) {
 				window.open(tileurl, "_blank");
 			}
+			
+			$(function(){
+	        $('#searchtext').bind('keypress',function(event){
+	            if(event.keyCode == "13")    
+	            {
+	                baidu();
+	            }
+	        });
+    });
 		</script>
 	</head>
 
@@ -39,11 +48,11 @@
 					</div>
 				</div>
 
-				<div id="webgrid" class="example grid" align="left">
+				<div id="webgrid" class="example grid">
 
 				</div>
 
-				<div id="tile">
+				<div id="tile" style="padding-left:30px">
 				</div>
 
 			</div>
