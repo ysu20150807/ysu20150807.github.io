@@ -274,26 +274,16 @@ function showWeather() {
 	var info = '';
 
 	$.ajax({
-		//      url: "http://api.openweathermap.org/data/2.5/weather?id=1797595&lang=zh&units=metric",
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?id=1797595&units=metric&cnt=2&lang=zh",
-
 		type: 'GET',
 		dataType: 'JSONP',
 		success: function(data) {
-
 			$.each(data.list, function(n, value) {
-//				console.info(n);
-				info += '<span style="padding-left:20px">';
+				info += '<span style="padding-left:20px;float:right">';
 				info += (n == 0) ? '今日' : '明日';
 				info += value.weather[0].description + ' ' + value.temp.min + '~' + value.temp.max + '°C</span>';
 			})
 			$("#weather").append(info);
-
-			//      $("#date_m").html('get at ' + year+'.'+mon+'.'+day+' '+hr+':'+mn );
-			//
-			//      var times = SunCalc.getTimes(new Date(), 39.93, 119.59);
-			//      $("#sunrise").html(times.sunrise.getHours() + ':' + times.sunrise.getMinutes());
-			//      $("#sunset").html(times.sunset.getHours() + ':' + times.sunset.getMinutes());
 		}
 	});
 }
