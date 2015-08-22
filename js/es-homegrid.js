@@ -254,7 +254,7 @@ function gengrid() {
 					if (value.id == undefined) {
 						$("#" + webgroup + rowid).append('<div class="cell"><a href="' + value.u + '" target="_blank">' + value.n + '</a></div>');
 					} else {
-						$("#" + webgroup + rowid).append('<div class="cell"><a id="' + value.id + '" href="#">' + value.n + '</a></div>');
+						$("#" + webgroup + rowid).append('<div class="cell"><a id="' + value.id + '" href="#" onlick="function(){_czc.push([\"_trackEvent\", \"good\", \"click\", \"\", \"\", \"trythis\"]);trythisfun();}">' + value.n + '</a></div>');
 					}
 
 				}
@@ -298,8 +298,15 @@ $(document).ready(function() {
 	
 	gengrid();
 
-	$("#trythis").click(function() {
-		var rnd = [ //他在推推推
+	// $("#trythis").click(function() {
+		
+	// });
+
+});
+
+function trythisfun()
+{
+	var rnd = [ //他在推推推
 			"http://i.83jie.com/stt/6iZtZGaVdA?pid=mm_34619426_10544719_34746681", //头条：七夕美饰一秒变女神
 			"http://s.click.taobao.com/kdydq1y?pid=mm_34619426_10544719_34746681", //天猫美妆频道
 			"http://temai.taobao.com/event9776.htm?pid=mm_34619426_10544719_34746681", //淘宝特卖 精品疯抢季
@@ -346,9 +353,8 @@ $(document).ready(function() {
 			"http://s.click.taobao.com/JVTYq1y?pid=mm_34619426_10544719_34746681&scm=20140618.1.02030003.11s12"
 		]
 		
-		_czc.push(["_trackEvent", "good", "click", "", "", "trythis"]);
+		
+		
 		var url = rnd[Math.floor(Math.random() * rnd.length)];
 		window.open(url , "_blank");
-	});
-
-});
+}
