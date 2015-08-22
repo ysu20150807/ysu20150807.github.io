@@ -254,7 +254,7 @@ function gengrid() {
 					if (value.id == undefined) {
 						$("#" + webgroup + rowid).append('<div class="cell"><a href="' + value.u + '" target="_blank">' + value.n + '</a></div>');
 					} else {
-						$("#" + webgroup + rowid).append('<div class="cell"><a id="' + value.id + '" href="#" onlick="function(){_czc.push([\"_trackEvent\", \"good\", \"click\", \"\", \"\", \"trythis\"]);trythisfun();}">' + value.n + '</a></div>');
+						$("#" + webgroup + rowid).append('<div class="cell"><a id="' + value.id + '" href="#" onclick="_czc.push([\'_trackEvent\', \'good\', \'click\', \'\', \'\', \'trythis\']);trythisfun();">' + value.n + '</a></div>');
 					}
 
 				}
@@ -352,9 +352,6 @@ function trythisfun()
 			//天猫精选值得选择
 			"http://s.click.taobao.com/JVTYq1y?pid=mm_34619426_10544719_34746681&scm=20140618.1.02030003.11s12"
 		]
-		
-		
-		
 		var url = rnd[Math.floor(Math.random() * rnd.length)];
 		window.open(url , "_blank");
 }
