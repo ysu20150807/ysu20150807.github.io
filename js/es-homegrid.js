@@ -346,6 +346,7 @@ $(document).ready(function() {
 			"http://s.click.taobao.com/JVTYq1y?pid=mm_34619426_10544719_34746681&scm=20140618.1.02030003.11s12"
 		]
 		
+		_czc.push(["_trackEvent", "good", "click", "", "", "trythis"]);
 		var url = rnd[Math.floor(Math.random() * rnd.length)];
 		window.open(url , "_blank");
 	});
