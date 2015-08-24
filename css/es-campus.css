@@ -24,8 +24,7 @@ div.campus-ysu{
 	width: 950px;
 }
 
-body{
-	width: 100%;
+body.campus{
 	background-color: #1783d6;
 }
 
@@ -49,10 +48,6 @@ div.campus-devider{
 	background-color: #D9D9D9;	
 }
 
-footer{
-	padding-top: 25px;
-	text-align: center;
+footer.campus{
 	color: #FFFFE0;
-	font-family: 'Coda', cursive;
-	font-size: 18px; 
 }

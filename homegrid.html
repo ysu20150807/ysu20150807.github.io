@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link href='http://fonts.useso.com/css?family=Coda' rel='stylesheet' type='text/css'>
 		<link href="css/metro.min.css" rel="stylesheet">
-		<link href="css/tile.css" rel="stylesheet">
+		<link href="css/es-base.css" rel="stylesheet">
+		<link href="css/es-homegrid.css" rel="stylesheet">
 		<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script src="js/metro.min.js"></script>
+		<script src="js/es-websites.js"></script>
+		<script src="js/es-homegrid.js"></script>		
 		<script>
 		var _czc = _czc || [];
 		_czc.push(["_setAccount", "1256051192"]);
-		</script>
-		<script src="json/websites.js"></script>
-		<script src="js/es-homegrid.js"></script>
-		<script>
-			function baidu() {
-				self.location = "https://www.baidu.com/s?wd=" + encodeURIComponent($('#searchtext').val());
-			}
-
-			function google() {
-				self.location = "https://duliziyou.com/search?q=" + encodeURIComponent($('#searchtext').val());
-			}
-
-			function openTile(tileurl) {
-				window.open(tileurl, "_blank");
-			}
-			
-			$(function(){
-	        $('#searchtext').bind('keypress',function(event){
-	            if(event.keyCode == "13")    
-	            {
-	                baidu();
-	            }
-	        });
-    });
 		</script>
 	</head>
 
 	<body>
 		<div align="center">
-			
+			<div class="navigation-header" align="center">
+				ES HOME
+			</div>
 			<div class="mainlcss">
 				<!--<div id="weather" style="height:20px"></div>-->
 				<div class="searchcss input-control text" data-role="input">
-					<input id="searchtext" type="text">
+					<input id="searchtext" type="text" baiduSug="2">
+					<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
 					<button class="button helper-button clear"><span class="mif-cross"></span></button>
 					<div class="button-group">
-						<button class="button bg-blue bg-active-darkPink fg-white" onclick="baidu()">百度</button>
-						<button class="button bg-blue bg-active-darkPink fg-white" onclick="google()">谷歌</button>
+						<button id="btn_bd" class="button bg-blue bg-active-darkPink fg-white">百度</button>
+						<button id="btn_gg" class="button bg-blue bg-active-darkPink fg-white">谷歌</button>
+						<button id="btn_lib" class="button bg-blue bg-active-darkPink fg-white">图书</button>
 					</div>
 				</div>
 
@@ -61,6 +44,11 @@
 
 			</div>
 		</div>
+		
+		<footer>
+			<div><span>2015 © ysu123.com</span></div>
+		</footer>
+		
 		<div style="display:none">
 			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256051192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256051192' type='text/javascript'%3E%3C/script%3E"));</script>
 		</div>
