@@ -113,7 +113,7 @@ $(document).ready(function() {
 	
 	$('#searchtext').bind('keypress', function(event) {
 		if (event.keyCode == "13") {
-			baidu();
+			self.location = "https://www.baidu.com/s?wd=" + encodeURIComponent($('#searchtext').val());
 		}
 	});
 	
