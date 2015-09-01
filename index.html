@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>ES HOME|YSU 导航</title>
-		<link rel="stylesheet" href="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fcss%2Fes-home.css" media="all" />
-		<link rel="stylesheet" href="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fcss%2Fkickstart-menus.css" media="all" />
+		<link rel="stylesheet" href="css/kickstart-menus.css" media="all" />
+		<link rel="stylesheet" href="css/es-home.css" />
+		<link href="css/metro.min.css" rel="stylesheet">
 		<script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script src="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fjs%2Fes-websites.js"></script>
-		<script src="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fjs%2Fes-home.js"></script>
-		<script src="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fjs%2Fes-custom-home.js"></script>
-		<script src="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fjs%2Fjquery.leanModal.min.js"></script>
+		<script type="text/javascript" src="js/es-home.js" ></script>
 		<script>
 			function AddFavorite(sURL, sTitle) {
 				try {
@@ -36,7 +35,35 @@
 				</li>
 			</ul>
 			<div id="container" style="padding-left: 0;">
-				<iframe id="viewer" name="viewer" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" style="background-color:#fff" src></iframe>
+				<div align="center">
+					
+				<div class="navigation-header" align="center">
+					ES HOME
+				</div>
+				
+				<div class="mainlcss">
+					<div class="searchcss input-control text" data-role="input">
+						<input id="searchtext" type="text" baiduSug="2">
+						<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
+						<button class="button helper-button clear"><span class="mif-cross"></span></button>
+						<div class="button-group">
+							<button id="btn_bd" class="button bg-blue bg-active-darkPink fg-white">百度</button>
+							<button id="btn_gg" class="button bg-blue bg-active-darkPink fg-white">谷歌</button>
+							<button id="btn_lib" class="button bg-blue bg-active-darkPink fg-white">图书</button>
+						</div>
+					</div>
+	
+					<div id="webgrid" class="example grid">
+	
+					</div>
+	
+					<div id="tile" style="padding-left:30px">
+						
+					</div>				
+	
+				</div>
+			</div>
+			
 			</div>
 		</div>
 		<div id="about" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px; background-color: #FFFFE0;"  align="center">
@@ -51,8 +78,8 @@
 					</tr>
 					<tr>
 						<th>Version</th>
-						<td>alpha_6</td>
-						<td>20150824</td>
+						<td>alpha_7</td>
+						<td>20150901</td>
 					</tr>
 					<tr>
 						<th>Powered by</th>
@@ -67,4 +94,5 @@
 		</div>
 		<div id="lean_overlay">	</div>
 	</body>
+
 </html>
