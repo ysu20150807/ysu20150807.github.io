@@ -79,7 +79,7 @@ var campus_json = [{
 
 $(document).ready(function() {
 	$.each(campus_json, function(n, value) {
-		$("#webgrid").append('<div class="campus-block esopen" esOpenVaule="' + value.u + '"><img src="img/campus/' + value.n + '.jpg"></img></div>');
+		$("#webgrid").append('<div class="campus-block esopen" esOpenVaule="' + value.u + '"><img src="http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fimg%2Fcampus%2F' + value.n + '.jpg"></img></div>');
 	});
 	
 	$("div.esopen").click(function() {

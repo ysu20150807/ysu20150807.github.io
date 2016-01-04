@@ -263,7 +263,7 @@ function gengrid() {
 					$("#" + webgroup + rowid).append('<div class="cell"><a href="' + value.u + '" target="_blank">' + value.n + '</a></div>');
 				}
 			} else {
-				$("#tile").append(getTile(value.u, 'http://wpxbdh.oss-cn-beijing.aliyuncs.com/ysu123%2Fimg%2F' + value.tile + '.png', value.n));
+				$("#tile").append(getTile(value.u, 'img/' + value.tile + '.png', value.n));
 			}
 		});
 	});
